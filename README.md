@@ -99,4 +99,4 @@ This ensures consistency and removes all manual deployment steps.
 - .github/workflows/function-deploy.yml
 
 ## Related Repository
-Frontend (Azure Static Web Apps): https://github.com/gflo1997/cloud-resume-frontend?utm_source=chatgpt.com
+Frontend (Azure Static Web Apps): [https://github.com/gflo1997/cloud-resume-frontend?utm_source=chatgpt.com](https://github.com/gflo1997/cloud-resume-frontend)
