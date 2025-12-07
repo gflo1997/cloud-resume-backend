@@ -10,7 +10,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info("HTTP trigger function processed a request for visitor count")
 
     try:
-        # connection string from AzureWebJobsStorage setting
         connection_string = os.getenv("AzureWebJobsStorage")
         table_name = "VisitorCounter"
 
@@ -20,7 +19,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         table_client = table_service.get_table_client(table_name=table_name)
 
         try:
-            # get existing row
             entity = table_client.get_entity(
                 partition_key="counter",
                 row_key="1",
@@ -35,7 +33,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                 mode=UpdateMode.REPLACE,
             )
         except Exception:
-            # if row does not exist, create it with count = 1
             new_count = 1
             entity = {
                 "PartitionKey": "counter",
